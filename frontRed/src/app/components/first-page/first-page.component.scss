@@ -1,0 +1,51 @@
+.navbar {
+    z-index: 1;
+    position: fixed;
+}
+
+.view {
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190622/ourmid/pngtree-music-guitar-steam-wave-banner-background-image_208733.jpg")no-repeat center;
+    background-size: cover;
+    height: 90vh;
+    position: relative;
+}
+
+.formLogin {
+    margin-top: 3%;
+}
+
+.sobrepone {
+    background-color: white;
+    position: absolute;
+    align-items: center;
+    top: 25%;
+    color: black;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.heightButton {
+    margin-top: -1%;
+    height: 80% !important;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}

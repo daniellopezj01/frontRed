@@ -1,13 +1,13 @@
-import { ServicePerson } from './services/ServicePerson';
-import { Person } from './logic/Person';
+import { ServicePerson } from './../../services/ServicePerson';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { Injectable } from '@angular/core';
-import { MustMatch } from '../app/logic/must-match.validator';
 import { Router } from '@angular/router';
+import { Person } from 'src/app/logic/Person';
+import { MustMatch } from 'src/app/logic/must-match.validator';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -15,14 +15,15 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-first-page',
+  templateUrl: './first-page.component.html',
+  styleUrls: ['./first-page.component.scss']
 })
 
 @Injectable()
-export class AppComponent implements OnInit {
+export class FirstPageComponent implements OnInit {
   title = 'Red';
   person: Person;
   registerForm: FormGroup;

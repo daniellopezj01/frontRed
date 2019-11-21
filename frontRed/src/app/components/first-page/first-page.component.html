@@ -1,0 +1,109 @@
+<header class="h-100">
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black" [containerInside]="true">
+        <mdb-navbar-brand>
+            <a class="logo navbar-brand" href="#"><strong> <h3> SoundART </h3> </strong></a>
+        </mdb-navbar-brand>
+        <links>
+            <ul class="navbar-nav col-md-12">
+                <div class="formLogin offset-md-5 offset-sm-1 col-md-9 col-sm-10 col-xs-8">
+                    <form [formGroup]="LoginForm" (ngSubmit)="onSubmitLogin()">
+                        <div class="form-group row">
+                            <div class="offset-md-2"></div>
+                            <div class="col-md-4">
+                                <input placeholder="Email" type="text" formControlName="emailLogin" class="form-control" [(ngModel)]="email" [ngClass]="{ 'is-invalid': validateLogin && getLoginForm.emailLogin.errors }" />
+                                <div *ngIf="validateLogin && getLoginForm.emailLogin.errors" class="invalid-feedback">
+                                    <div *ngIf="getLoginForm.emailLogin.errors.required">Email es obligatorio</div>
+                                    <div *ngIf="getLoginForm.emailLogin.errors.email">example@xample.com</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <input placeholder="Contraseña" type="password" formControlName="passwordLogin" class="form-control" [(ngModel)]="password" [ngClass]="{ 'is-invalid': validateLogin && getLoginForm.passwordLogin.errors }" />
+                                <div *ngIf="validateLogin && getLoginForm.passwordLogin.errors" class="invalid-feedback">
+                                    <div *ngIf="getLoginForm.passwordLogin.errors.required">contraseña obligatoria</div>
+                                    <div *ngIf="getLoginForm.passwordLogin.errors.minlength">minimo 6 caracteres</div>
+                                </div>
+                            </div>
+                            <div class=" col-md-2">
+                                <button class="btn btn-primary">Ingresar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </ul>
+        </links>
+    </mdb-navbar>
+    <!--Problema del Scroll-->
+    <div class="view intro-2">
+        <div class="full-bg-img">
+        </div>
+    </div>
+</header>
+<!--Main Layout-->
+<main>
+    <div>
+        <section id="SRegister">
+            <div class=" intro-2">
+                <div class="full-bg-img">
+                    <div class="mask rgba-black-light ">
+                        <div class=" text-center white-text wow fadeInUp">
+                            <div class="sobrepone offset-md-7 offset-sm-2 col-md-4 col-sm-12  col-xs-12 example-container">
+                                <br>
+                                <h3 style="text-align: center"> <strong> <b> Registrate </b></strong></h3>
+                                <br>
+                                <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+                                    <div class=" row">
+                                        <div class="form-group col-md-6">
+                                            <input placeholder="Nombre*" type="text" formControlName="firstName" class="form-control" [(ngModel)]="person.firstName" [ngClass]="{ 'is-invalid': validateRegister && getRegisterForm.firstName.errors }" />
+                                            <div *ngIf="validateRegister && getRegisterForm.firstName.errors" class="invalid-feedback">
+                                                <div *ngIf="getRegisterForm.firstName.errors.required">Nombre es obligatorio</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input placeholder="Apellido*" type="text" formControlName="LastName" class="form-control" [(ngModel)]="person.lastName" [ngClass]="{ 'is-invalid': validateRegister && getRegisterForm.LastName.errors }" />
+                                            <div *ngIf="validateRegister && getRegisterForm.LastName.errors" class="invalid-feedback">
+                                                <div *ngIf="getRegisterForm.LastName.errors.required">Apellido es obligatorio</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input placeholder="Email*" type="text" formControlName="email" class="form-control" [(ngModel)]="person.email" [ngClass]="{ 'is-invalid': validateRegister && getRegisterForm.email.errors }" />
+                                        <div *ngIf="validateRegister && getRegisterForm.email.errors" class="invalid-feedback">
+                                            <div *ngIf="getRegisterForm.email.errors.required">Email es obligatorio</div>
+                                            <div *ngIf="getRegisterForm.email.errors.email">example@xample.com</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input placeholder="Usuario*" type="text" formControlName="user" class="form-control" [(ngModel)]="person.user" [ngClass]="{ 'is-invalid': validateRegister && getRegisterForm.user.errors }" />
+                                        <div *ngIf="validateRegister && getRegisterForm.user.errors" class="invalid-feedback">
+                                            <div *ngIf="getRegisterForm.user.errors.required">Usuario es obligatorio</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input placeholder="Contraseña*" type="password" formControlName="password" class="form-control" [(ngModel)]="person.password" [ngClass]="{ 'is-invalid': validateRegister && getRegisterForm.password.errors }" />
+                                        <div *ngIf="validateRegister && getRegisterForm.password.errors" class="invalid-feedback">
+                                            <div *ngIf="getRegisterForm.password.errors.required">contraseña obligatoria</div>
+                                            <div *ngIf="getRegisterForm.password.errors.minlength">minimo 6 caracteres</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input placeholder="Repetir Contraseña*" type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': validateRegister && getRegisterForm.confirmPassword.errors }" />
+                                        <div *ngIf="validateRegister && getRegisterForm.confirmPassword.errors" class="invalid-feedback">
+                                            <div *ngIf="getRegisterForm.confirmPassword.errors.required">contraseña obligatoria</div>
+                                            <div *ngIf="getRegisterForm.confirmPassword.errors.mustMatch">las contraseñas no coinciden</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="text-align: left">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary">Registrarse</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
