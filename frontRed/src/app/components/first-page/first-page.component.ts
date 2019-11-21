@@ -2,8 +2,6 @@ import { ServicePerson } from './../../services/ServicePerson';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { HttpClient } from '@angular/common/http';
-import { MatDialog } from '@angular/material/dialog';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Person } from 'src/app/logic/Person';
@@ -34,14 +32,14 @@ export class FirstPageComponent implements OnInit {
   password: String;
   value:any;
 
-  constructor(private formBuilder: FormBuilder,private _router: Router, private servicePerson: ServicePerson, private dialog: MatDialog, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder,private _router: Router, private servicePerson: ServicePerson) {
     if(sessionStorage.getItem("persona")){
       this.person = JSON.parse(sessionStorage.getItem('persona')); 
       this._router.navigate([`/inicio`]);
     }else{
       this.person = new Person();
       this.email = "daniellopezj0327@gmail.com";
-      this.password = "aaaaaaa";
+      this.password = "ssssss";
     }
   }
 
