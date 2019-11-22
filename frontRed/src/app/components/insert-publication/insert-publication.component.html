@@ -1,1 +1,30 @@
-<p>insert-publication works!</p>
+<div style="align-items: center" class=" prin">
+    <div class=" text-center">
+        <h4 class=" w-100 font-weight-bold">
+            publicar</h4>
+    </div>
+    <br>
+    <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="insertPublication()">
+            <input placeholder="Titulo" type="text" formControlName="title" class="form-control medio" [(ngModel)]="publication.tittle" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required">titulo Requerido</div>
+            </div>
+            <br>
+            <input placeholder="Descripcion" type="text" formControlName="description" class="form-control medio" [(ngModel)]="publication.description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">descripcion Requerido</div>
+            </div>
+            <br>
+            <input placeholder="link de tu video" type="text" formControlName="link" class="form-control" [(ngModel)]="publication.link_Sound" [ngClass]="{ 'is-invalid': submitted && f.link.errors }" />
+            <div *ngIf="submitted && f.link.errors" class="invalid-feedback">
+                <div *ngIf="f.link.errors.required">Link Required</div>
+            </div>
+            <br>
+            <br>
+            <div class="form-group md-8" style="text-align: center">
+                <button class="btn btn-primary">Publicar</button>
+            </div>
+        </form>
+    </div>
+</div>

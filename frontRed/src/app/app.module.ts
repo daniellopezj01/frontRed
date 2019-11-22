@@ -16,6 +16,7 @@ import { FirstPageComponent } from './components/first-page/first-page.component
 import { NavbarHomeComponent } from './components/navbar-home/navbar-home.component';
 import { HomePublicationComponent } from './components/home-publication/home-publication.component';
 import { InsertPublicationComponent } from './components/insert-publication/insert-publication.component';
+import { MatLinkPreviewModule } from '@angular-material-extensions/link-preview';
 
 @NgModule({
   declarations: [
@@ -28,16 +29,20 @@ import { InsertPublicationComponent } from './components/insert-publication/inse
     HomePublicationComponent,
     InsertPublicationComponent
   ],
+  
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
+    MatLinkPreviewModule.forRoot(),
     FormsModule,
     MaterialModule,
     HttpClientModule,
     RouterModule,
     ReactiveFormsModule,
     AppRoutingModule
+  ], entryComponents:[
+    InsertPublicationComponent
   ],
   providers: [{provide:APP_BASE_HREF,useValue:''}],
   bootstrap: [AppComponent],

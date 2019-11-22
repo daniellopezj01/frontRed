@@ -1,4 +1,8 @@
+import { Person } from './../../logic/Person';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { InsertPublicationComponent } from '../insert-publication/insert-publication.component';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  person:Person;
+  
+  constructor(private _router:Router,public dialog: MatDialog) { 
+    if(sessionStorage.getItem("persona")){
+      this.person = JSON.parse(sessionStorage.getItem('persona')); 
+    }else{
+      this.person = new Person();
+    }
   }
 
+  ngOnInit() {
+
+  }
+
+  insertPublication(){
+    const dialogRef = this.dialog.open(InsertPublicationComponent, {
+      data: { name: 1 }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      /*this.publicationService.requestpublication().subscribe(res => {
+        this.listInfo = res;
+      });*/
+    });
+  }
 }

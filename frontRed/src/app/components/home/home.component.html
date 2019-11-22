@@ -1,3 +1,43 @@
 <app-navbar-home></app-navbar-home>
-<p>homasdsadasds asdasd </p>
-<router-outlet></router-outlet>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class=" row ">
+    <div class="col-md-3 col-xs-12 cssinfoPerson">
+        <div class=" imagen waves-light" mdbWavesEffect>
+            <img src="{{person.image}}" class="estilosImg" (click)="showimage(item.disenio)" data-toggle="modal" data-target="#exampleModal">
+        </div>
+        <div>
+            <h1><strong>{{person.user}}</strong></h1>
+        </div>
+        <div>
+            <button mdbBtn type="button" color="success" outline="true" size="lg" (click)="insertPublication()" mdbWavesEffect>Publicar</button>
+        </div>
+        <div>
+            <button mdbBtn type="button" color="secondary" outline="true" size="lg" mdbWavesEffect>Favoritos</button>
+
+        </div>
+        <div>
+            <button mdbBtn type="button" color="primary" outline="true" size="lg" mdbWavesEffect>Mis Amigos</button>
+        </div>
+
+    </div>
+    <div class="col-md-5 ">
+        <mat-form-field appearance="outline">
+            <mat-label>Enter here your text here with few links to preview ;)</mat-label>
+            <textarea matInput matTextareaAutosize matLinkPreview minRows="6"></textarea>
+            <mat-link-preview-container [multiple]="true"></mat-link-preview-container>
+        </mat-form-field>
+        asdsad
+    </div>
+    <div class="col-md-4">asdsad</div>
+    <div class="modal fade" id="exampleModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <img src="{{person.image}}" class="estilosImg">
+            </div>
+        </div>
+    </div>
+</div>

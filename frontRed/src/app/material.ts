@@ -1,4 +1,5 @@
 import {MatButtonModule} from '@angular/material/button';
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import {MatSelectModule} from '@angular/material/select';
@@ -29,7 +30,7 @@ import {MatCardModule} from '@angular/material/card';
         MatTooltipModule,
         MatProgressSpinnerModule,
         MatPaginatorModule,
-        MatCardModule
+        MatCardModule,
     ],
     exports: [MatButtonModule,
         MatToolbarModule,
@@ -45,7 +46,7 @@ import {MatCardModule} from '@angular/material/card';
         MatTooltipModule,
         MatProgressSpinnerModule,
         MatPaginatorModule,
-        MatCardModule
+        MatCardModule,
     ]
 })
 export class MaterialModule { }
