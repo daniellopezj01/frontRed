@@ -1,7 +1,7 @@
-<div style="align-items: center" class=" prin">
+<div class="prin">
     <div class=" text-center">
         <h4 class=" w-100 font-weight-bold">
-            publicar</h4>
+            Formulario de Publicacion</h4>
     </div>
     <br>
     <div class="container">
@@ -16,10 +16,14 @@
                 <div *ngIf="f.description.errors.required">descripcion Requerido</div>
             </div>
             <br>
-            <input placeholder="link de tu video" type="text" formControlName="link" class="form-control" [(ngModel)]="publication.link_Sound" [ngClass]="{ 'is-invalid': submitted && f.link.errors }" />
-            <div *ngIf="submitted && f.link.errors" class="invalid-feedback">
-                <div *ngIf="f.link.errors.required">Link Required</div>
-            </div>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>link de tu video</mat-label>
+                <textarea matInput matTextareaAutosize matLinkPreview minRows="6" formControlName="link" class="form-control" [(ngModel)]="publication.link_Sound" [ngClass]="{ 'is-invalid': submitted && f.link.errors }"></textarea>
+                <mat-link-preview-container [multiple]="true"></mat-link-preview-container>
+                <div *ngIf="submitted && f.link.errors" class="invalid-feedback">
+                    <div *ngIf="f.link.errors"></div>
+                </div>
+            </mat-form-field>
             <br>
             <br>
             <div class="form-group md-8" style="text-align: center">

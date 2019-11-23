@@ -1,5 +1,5 @@
 import { HomeComponent } from './../home/home.component';
-import { Component, OnInit, Inject,  } from '@angular/core';
+import { Component, OnInit, Inject, } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -23,8 +23,8 @@ export class InsertPublicationComponent implements OnInit {
   registerForm: FormGroup;
   publication: Publication;
   name: any;
-  sendpublication: any;
-  
+  sendPerson: any;
+
   constructor(private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<InsertPublicationComponent>,
     @Inject(MAT_DIALOG_DATA) public homeComponent: HomeComponent, private publicationSservice: PublicationsService) {
@@ -46,12 +46,18 @@ export class InsertPublicationComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    console.log("Entre en el boton de publicar");
-    this.publication.id_publication = this.randomInt(100, 200);
-    
-    //this.publicationSservice.insertpublication(this.publication).subscribe(res => {
-      
-    //})
+    this.publication.id_publication = this.randomInt(100000, 900000);
+    this.publication.nicknameAutor = this.homeComponent.person.user;
+    this.publication.date = new Date();
+    this.publication.countLikes = 0;
+    this.publicationSservice.insertpublication(this.publication).subscribe(res => {
+      if(res.responseCode == 200){
+        this.publication = new Publication();
+        this.dialogRef.close();
+      }else{
+        alert("Upsss ocurrio un fallo");
+      }
+    })
   }
 
   randomInt(min, max) {

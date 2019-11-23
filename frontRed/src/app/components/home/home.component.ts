@@ -27,12 +27,14 @@ export class HomeComponent implements OnInit {
 
   insertPublication(){
     const dialogRef = this.dialog.open(InsertPublicationComponent, {
-      data: { name: 1 }
+      data: { name: 1, person: this.person }
     });
     dialogRef.afterClosed().subscribe(result => {
+      this._router.navigate([``]);
       /*this.publicationService.requestpublication().subscribe(res => {
         this.listInfo = res;
       });*/
     });
   }
+
 }

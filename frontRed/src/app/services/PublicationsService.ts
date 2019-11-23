@@ -1,3 +1,4 @@
+import { StatusServices } from './StatusServices';
 import { Publication } from '../logic/Publication';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -13,8 +14,8 @@ export class PublicationsService {
         return this.http.get<JSON>(`http://localhost:3000/publications/`);
     }
 
-    public insertpublication(publication: Publication): Observable<JSON> {
-        return this.http.post<JSON>(`http://localhost:3000/publications`, publication);
+    public insertpublication(publication: Publication): Observable<StatusServices> {
+        return this.http.post<StatusServices>(`http://localhost:3000/publications`, publication);
     }
 
     public Updatepublication(publication: Publication): Observable<JSON> {
