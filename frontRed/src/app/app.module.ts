@@ -17,6 +17,7 @@ import { NavbarHomeComponent } from './components/navbar-home/navbar-home.compon
 import { HomePublicationComponent } from './components/home-publication/home-publication.component';
 import { InsertPublicationComponent } from './components/insert-publication/insert-publication.component';
 import { MatLinkPreviewModule } from '@angular-material-extensions/link-preview';
+import { EmbedVideo } from 'ngx-embed-video';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MatLinkPreviewModule } from '@angular-material-extensions/link-preview'
     HttpClientModule,
     RouterModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    EmbedVideo.forRoot(),
   ], entryComponents:[
     InsertPublicationComponent
   ],

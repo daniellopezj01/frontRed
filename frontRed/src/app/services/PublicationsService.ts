@@ -10,8 +10,8 @@ import { HttpClient } from '@angular/common/http';
 
 export class PublicationsService {
     constructor(private http: HttpClient) { }
-    public requestpublication(): Observable<JSON> {
-        return this.http.get<JSON>(`http://localhost:3000/publications/`);
+    public requestpublication(): Observable<StatusServices> {
+        return this.http.get<StatusServices>(`http://localhost:3000/publications/`);
     }
 
     public insertpublication(publication: Publication): Observable<StatusServices> {
