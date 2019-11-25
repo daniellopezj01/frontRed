@@ -18,6 +18,8 @@ import { HomePublicationComponent } from './components/home-publication/home-pub
 import { InsertPublicationComponent } from './components/insert-publication/insert-publication.component';
 import { MatLinkPreviewModule } from '@angular-material-extensions/link-preview';
 import { EmbedVideo } from 'ngx-embed-video';
+import { Select2Module } from 'ng2-select2';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { EmbedVideo } from 'ngx-embed-video';
     ReactiveFormsModule,
     AppRoutingModule,
     EmbedVideo.forRoot(),
+    Select2Module
     
   ], entryComponents:[
     InsertPublicationComponent

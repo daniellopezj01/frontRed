@@ -1,4 +1,6 @@
+import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
+import { Select2TemplateFunction, Select2OptionData } from 'ng2-select2';
 
 @Component({
   selector: 'app-prueba',
@@ -6,12 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prueba.component.scss']
 })
 export class PruebaComponent implements OnInit {
-
-  constructor() { 
-    console.log("hola")
-  }
+  public exampleData: Array<Select2OptionData>;
 
   ngOnInit() {
+    this.exampleData = [
+      {
+        id: 'basic1',
+        text: 'prueba'
+      },
+      {
+        id: 'basic2',
+        text: 'praasd'
+      },
+      {
+        id: 'basic3',
+        text: 'Basic 3'
+      },
+      {
+        id: 'basic4',
+        text: 'Basic 4'
+      }
+    ];
   }
-
 }

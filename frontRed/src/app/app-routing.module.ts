@@ -9,9 +9,9 @@ import { FirstPageComponent } from './components/first-page/first-page.component
 const routes: Routes = [
     { path: 'inicio', component: HomeComponent,  children: [
         { path: '', component:HomePublicationComponent, },
-        { path: 'c', component:InsertPublicationComponent, }
+        { path: 'c', component:InsertPublicationComponent, },
+        { path: 'p', component: PruebaComponent },
     ]},
-    { path: 'p', component: PruebaComponent },
     { path: '', component: FirstPageComponent },
 ];
 
