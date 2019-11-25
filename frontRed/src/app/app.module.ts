@@ -43,6 +43,7 @@ import { EmbedVideo } from 'ngx-embed-video';
     ReactiveFormsModule,
     AppRoutingModule,
     EmbedVideo.forRoot(),
+    
   ], entryComponents:[
     InsertPublicationComponent
   ],
