@@ -39,7 +39,6 @@ export class HomePublicationComponent implements OnInit {
     await this.listInfo.forEach(element => {
       this.iframe_html[i] = this.embedService.embed(element.link_Sound, {
         query: { portrait: 0, color: '333' },
-        attr: { width: 450, height: 250 }
       });
       i++;
     });

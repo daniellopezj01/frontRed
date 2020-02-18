@@ -3,16 +3,17 @@
     <h5>Lo mas reciente...</h5>
     <div *ngFor="let item of listInfo;let i = index">
         <div class=" offset-md-1"></div>
-        <mat-card class="col-md-10 flex flex">
+        <mat-card class="flex " style="background-color: #3f51b5; color: white;">
             <mat-card-header>
                 <img mat-card-avatar src="{{item.imagePerson}}" alt="">
                 <mat-card-title>{{item.nickname}}</mat-card-title>
                 <mat-card-title>{{item.tittle}}</mat-card-title>
             </mat-card-header>
-            <mat-card-content class="">
-                <div [innerHtml]="iframe_html[i]"></div>
+            <mat-card-content>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <div [innerHtml]="iframe_html[i]"></div>
+                </div>
                 <p>{{item.description}}
-                </p>
             </mat-card-content>
 
             <mat-card-actions>
