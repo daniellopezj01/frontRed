@@ -4,35 +4,31 @@
 <br>
 <br>
 <br>
-<div class=" row ">
-    <div class="col-md-3 col-xs-12 cssinfoPerson">
-        <div class=" imagen waves-light" mdbWavesEffect>
-            <img src="{{person.image}}" class="estilosImg" (click)="showimage(item.disenio)" data-toggle="modal" data-target="#exampleModal">
+<div class="container-fluid">
+    <div class=" row ">
+        <div class="col-md-3 col-xs-12 cssinfoPerson ">
+            <div class=" imagen waves-light" mdbWavesEffect>
+                <img src="{{person.image}}" class="estilosImg" (click)="showimage(item.disenio)" data-toggle="modal" data-target="#exampleModal">
+            </div>
+            <div>
+                <h1><strong>{{person.user}}</strong></h1>
+            </div>
+            <div class="options">
+                <button mdbBtn type="button" class="btn btn-outline-primary btn-block" (click)="insertPublication()">Publicar</button>
+                <button mdbBtn type="button" class="btn btn-outline-secondary btn-block">Favoritos</button>
+                <button mdbBtn type="button" class="btn btn-outline-success btn-block">Mis amigos</button>
+            </div>
         </div>
-        <div>
-            <h1><strong>{{person.user}}</strong></h1>
+        <div class="col-lg-5 col-md-5">
+            <router-outlet></router-outlet>
         </div>
-        <div>
-            <button mdbBtn type="button" color="success" outline="true" size="lg" (click)="insertPublication()" mdbWavesEffect>Publicar</button>
-        </div>
-        <div>
-            <button mdbBtn type="button" color="secondary" outline="true" size="lg" mdbWavesEffect>Favoritos</button>
-
-        </div>
-        <div>
-            <button mdbBtn type="button" color="primary" outline="true" size="lg" mdbWavesEffect>Mis Amigos</button>
-        </div>
-
-    </div>
-    <div class="col-md-5 ">
-        <router-outlet></router-outlet>
-    </div>
-    <div class="col-md-4">asdsad</div>
-    <div class="modal fade" id="exampleModal" role="dialog" aria-hidden="true">
+        <div class="col-lg-4 col-md-4">asdsad</div>
+        <!--div class="modal fade" id="exampleModal" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <img src="{{person.image}}" class="estilosImg">
             </div>
         </div>
+    </div-->
     </div>
 </div>
