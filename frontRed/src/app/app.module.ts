@@ -20,6 +20,7 @@ import { MatLinkPreviewModule } from '@angular-material-extensions/link-preview'
 import { EmbedVideo } from 'ngx-embed-video';
 import { Select2Module } from 'ng2-select2';
 import { MeetPeopleComponent } from './components/meet-people/meet-people.component';
+import { UpdatePersonComponent } from './components/update-person/update-person.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MeetPeopleComponent } from './components/meet-people/meet-people.compon
     NavbarHomeComponent,
     HomePublicationComponent,
     InsertPublicationComponent,
-    MeetPeopleComponent
+    MeetPeopleComponent,
+    UpdatePersonComponent
   ],
   
   imports: [
@@ -50,7 +52,7 @@ import { MeetPeopleComponent } from './components/meet-people/meet-people.compon
     Select2Module
     
   ], entryComponents:[
-    InsertPublicationComponent
+    InsertPublicationComponent,UpdatePersonComponent
   ],
   providers: [{provide:APP_BASE_HREF,useValue:''}],
   bootstrap: [AppComponent],
