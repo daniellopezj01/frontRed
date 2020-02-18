@@ -5,12 +5,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { FirstPageComponent } from './components/first-page/first-page.component';
+import { MeetPeopleComponent } from './components/meet-people/meet-people.component';
 
 const routes: Routes = [
     { path: 'inicio', component: HomeComponent,  children: [
         { path: '', component:HomePublicationComponent, },
         { path: 'c', component:InsertPublicationComponent, },
         { path: 'p', component: PruebaComponent },
+        { path: 'conocer', component: MeetPeopleComponent },
     ]},
     { path: '', component: FirstPageComponent },
 ];

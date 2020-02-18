@@ -1,0 +1,21 @@
+<div class="text-center">
+    <h1>Quizas conozcas...</h1>
+    <div *ngFor="let item of listInfo;let i = index">
+        <div class=" offset-md-1"></div>
+        <mat-card class="flex " style="background-color: white; ">
+            <mat-card-header>
+                <div class="col-1">
+                    <img mat-card-avatar src="{{item.image}}" alt="">
+                </div>
+                <div class="col-8" style="text-align: left;">
+                    <mat-card-title>{{item.user}}</mat-card-title>
+                </div>
+                <div class="col-2">
+                    <button mdbBtn type="button" color="unique" mdbWavesEffect>Seguir</button>
+                </div>
+            </mat-card-header>
+        </mat-card>
+        <br>
+        <br>
+    </div>
+</div>

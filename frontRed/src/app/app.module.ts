@@ -19,6 +19,7 @@ import { InsertPublicationComponent } from './components/insert-publication/inse
 import { MatLinkPreviewModule } from '@angular-material-extensions/link-preview';
 import { EmbedVideo } from 'ngx-embed-video';
 import { Select2Module } from 'ng2-select2';
+import { MeetPeopleComponent } from './components/meet-people/meet-people.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { Select2Module } from 'ng2-select2';
     FirstPageComponent,
     NavbarHomeComponent,
     HomePublicationComponent,
-    InsertPublicationComponent
+    InsertPublicationComponent,
+    MeetPeopleComponent
   ],
   
   imports: [
