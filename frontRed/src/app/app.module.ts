@@ -20,7 +20,11 @@ import { MatLinkPreviewModule } from '@angular-material-extensions/link-preview'
 import { EmbedVideo } from 'ngx-embed-video';
 import { Select2Module } from 'ng2-select2';
 import { MeetPeopleComponent } from './components/meet-people/meet-people.component';
+<<<<<<< HEAD
 import { TrenPubsComponent } from './components/tren-pubs/tren-pubs.component';
+=======
+import { UpdatePersonComponent } from './components/update-person/update-person.component';
+>>>>>>> 2bc3b3b8ba6dcf3d87c6fc4d3cbcd384bfdae78c
 
 
 @NgModule({
@@ -34,7 +38,11 @@ import { TrenPubsComponent } from './components/tren-pubs/tren-pubs.component';
     HomePublicationComponent,
     InsertPublicationComponent,
     MeetPeopleComponent,
+<<<<<<< HEAD
     TrenPubsComponent
+=======
+    UpdatePersonComponent
+>>>>>>> 2bc3b3b8ba6dcf3d87c6fc4d3cbcd384bfdae78c
   ],
   
   imports: [
@@ -52,7 +60,7 @@ import { TrenPubsComponent } from './components/tren-pubs/tren-pubs.component';
     Select2Module
     
   ], entryComponents:[
-    InsertPublicationComponent
+    InsertPublicationComponent,UpdatePersonComponent
   ],
   providers: [{provide:APP_BASE_HREF,useValue:''}],
   bootstrap: [AppComponent],

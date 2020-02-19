@@ -1,0 +1,36 @@
+<div style="align-items: center" class=" prin">
+    <div class=" text-center">
+        <h4 class=" w-100 font-weight-bold">
+            {{tittle}} person</h4>
+    </div>
+    <br>
+    <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="insertOrUpdatePerson()">
+
+            <div class="">
+                <input placeholder="First name" type="text" formControlName="nombre" class="form-control medio" [(ngModel)]="person.firstName" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+                <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                    <div *ngIf="f.nombre.errors.required">Name Required</div>
+                </div>
+            </div>
+            <br>
+            <div class="">
+                <input placeholder="Last name" type="text" formControlName="apellido" class="form-control medio" [(ngModel)]="person.lastName" [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
+                <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+                    <div *ngIf="f.apellido.errors.required">Last Name Required</div>
+                </div>
+            </div>
+            <br>
+            <div class="email">
+                <input placeholder="Email" type="text" formControlName="emailLogin" class="form-control" [(ngModel)]="person.email" [ngClass]="{ 'is-invalid': submitted && f.emailLogin.errors }" />
+                <div *ngIf="submitted && f.emailLogin.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f.emailLogin.errors">Email es obligatorio</div>
+                    <div *ngIf="f.emailLogin.errors.email">example@xample.com</div>
+                </div>
+            </div>
+            <div class="form-group md-8" style="text-align: center">
+                <button class="btn btn-primary">{{tittle}} Person</button>
+            </div>
+        </form>
+    </div>
+</div>
