@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { FirstPageComponent } from './components/first-page/first-page.component';
 import { MeetPeopleComponent } from './components/meet-people/meet-people.component';
+import { TrenPubsComponent } from './components/tren-pubs/tren-pubs.component';
 
 const routes: Routes = [
     { path: 'inicio', component: HomeComponent,  children: [
@@ -13,6 +14,7 @@ const routes: Routes = [
         { path: 'c', component:InsertPublicationComponent, },
         { path: 'p', component: PruebaComponent },
         { path: 'conocer', component: MeetPeopleComponent },
+        { path: 'trending', component: TrenPubsComponent}
     ]},
     { path: '', component: FirstPageComponent },
 ];

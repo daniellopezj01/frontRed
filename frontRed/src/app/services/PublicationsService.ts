@@ -14,6 +14,10 @@ export class PublicationsService {
         return this.http.get<StatusServices>(`http://localhost:3000/publications/`);
     }
 
+    public requestTrending(): Observable<StatusServices> {
+        return this.http.get<StatusServices>('http://localhost:3000/trendingPublications');
+    }
+
     public insertpublication(publication: Publication): Observable<StatusServices> {
         return this.http.post<StatusServices>(`http://localhost:3000/publications`, publication);
     }
