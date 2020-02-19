@@ -35,7 +35,8 @@ import { TrenPubsComponent } from './components/tren-pubs/tren-pubs.component';
     HomePublicationComponent,
     InsertPublicationComponent,
     MeetPeopleComponent,
-    TrenPubsComponent
+    TrenPubsComponent,
+    UpdatePersonComponent
   ],
   
   imports: [
